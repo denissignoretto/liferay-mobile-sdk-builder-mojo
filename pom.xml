@@ -48,7 +48,7 @@
 				<artifactId>liferay-mobile-sdk-builder-maven-plugin</artifactId>
 				<version>${project.version}</version>
 				<configuration>
-					<context>arag-mobile-portlet</context>
+					<context>/</context>
 					<platforms>android,ios</platforms>
 					<url>http://localhost:8080</url>
 					<version>62</version>
