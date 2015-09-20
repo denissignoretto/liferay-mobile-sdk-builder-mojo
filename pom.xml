@@ -55,6 +55,7 @@
 					<filter></filter>
 					<packageName>it.dsigno.liferay.mobile.sdk</packageName>
 					<destination>${project.build.directory}/generated-sources</destination>
+					<delay>10000</delay>
 				</configuration>
 			</plugin>
 		</plugins>

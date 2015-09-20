@@ -19,23 +19,18 @@ import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
 
+import com.liferay.mobile.sdk.util.Validator;
+
 /**
  * Goal which invoke Mobile SDK Builder, generate android java file.
  * 
- * @goal build-mobilesdk
+ * @goal mobile-sdk-gen-sources
  * @phase process-sources
  */
-@Mojo(name = "dsigno")
+@Mojo(name = "mobile-sdk-gen-sources")
 public class LiferayMobileSDKBuilderMojo extends AbstractMojo {
 
-    /**
-     * Location of the file.
-     * The source files will be generate by default to ${project.build.directory}/android/src/gen/java
-     * and ${project.build.directory}/ios/source.
-     * 
-     * @parameter expression="${project.build.directory}"
-     * @required
-     */
+    // https://maven.apache.org/plugin-tools/maven-plugin-tools-annotations/
 
     public void execute()
         throws MojoExecutionException {
@@ -54,6 +49,11 @@ public class LiferayMobileSDKBuilderMojo extends AbstractMojo {
 
             // executeTool(
             // "com.liferay.mobile.sdk.SDKBuilder", args);
+
+            if (Validator.isNotNull(delay) && Long.valueOf(delay) >= 0) {
+                getLog().info("Wainting " + Long.valueOf(delay) + " before Mobile SDK invocation.");
+                Thread.sleep(Long.valueOf(delay));
+            }
 
             com.liferay.mobile.sdk.SDKBuilder.main(args);
 
@@ -160,5 +160,12 @@ public class LiferayMobileSDKBuilderMojo extends AbstractMojo {
      * @parameter
      */
     private String filter;
+
+    /**
+     * Optional parameter to delay SDK Builder invocation.
+     * 
+     * @parameter
+     */
+    private String delay;
 
 }
