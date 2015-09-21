@@ -1,10 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
 	
 	<groupId>it.dsigno.liferay</groupId>
 	<artifactId>liferay-mobile-sdk-builder-maven-plugin</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 	
 	<packaging>maven-plugin</packaging>
 	
@@ -15,8 +16,7 @@
 		<connection>scm:git:git@github.com:denissignoretto/liferay-mobile-sdk-builder-mojo.git</connection>
 		<developerConnection>scm:git:git@github.com:denissignoretto/liferay-mobile-sdk-builder-mojo.git</developerConnection>
 		<url>scm:git:git@github.com:denissignoretto/liferay-mobile-sdk-builder-mojo.git</url>
-	  <tag>liferay-mobile-sdk-builder-maven-plugin-1.0.0</tag>
-  </scm>
+	</scm>
 
 	<properties>
 		<!-- PROJECT SETTINGS -->
@@ -65,7 +65,7 @@
 					<platforms>android,ios</platforms>
 					<url>http://localhost:8080</url>
 					<version>62</version>
-					<filter />
+					<filter></filter>
 					<packageName>it.dsigno.liferay.mobile.sdk</packageName>
 					<destination>${project.build.directory}/generated-sources</destination>
 					<delay>10000</delay>
