@@ -19,6 +19,8 @@
 	</scm>
 
 	<properties>
+		<!-- PROJECT SETTINGS -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- LIBS VERSION -->
 		<liferay.sdk.builder.version>6.2.0.16</liferay.sdk.builder.version>
 		<liferay-android-sdk.version>6.2.0.22</liferay-android-sdk.version>
@@ -26,15 +28,26 @@
 		<!-- MAVEN PLUGINS VERSION -->
 		<maven-plugin-api.version>2.0</maven-plugin-api.version>
 		<maven-release-plugin.version>2.5.2</maven-release-plugin.version>
+		<maven-resources-plugin.version>2.5</maven-resources-plugin.version>
 	</properties>
 
 	<build>
 		<plugins>
+			<!-- Maven Release Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
 				<version>${maven-release-plugin.version}</version>
 			</plugin>
+			<!-- Maven Resources Plugin -->
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${maven-resources-plugin.version}</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<!-- Maven Plugin Plugin -->
 			<plugin>
 		        <artifactId>maven-plugin-plugin</artifactId>
 				<version>2.9</version>
