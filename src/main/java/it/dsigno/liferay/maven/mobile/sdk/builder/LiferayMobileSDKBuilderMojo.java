@@ -51,7 +51,7 @@ public class LiferayMobileSDKBuilderMojo extends AbstractMojo {
             // "com.liferay.mobile.sdk.SDKBuilder", args);
 
             if (Validator.isNotNull(delay) && Long.valueOf(delay) >= 0) {
-                getLog().info("Wainting " + Long.valueOf(delay) + " before Mobile SDK invocation.");
+                getLog().info("Wainting " + Long.valueOf(delay) + " (ms) before Mobile SDK invocation.");
                 Thread.sleep(Long.valueOf(delay));
             }
 
